@@ -1,0 +1,20 @@
+# Ignore everything and include .gitignore
+*
+!.gitignore
+
+# i3wm
+!i3/
+!i3/config
+
+# polybar
+!polybar
+!polybar/config.ini
+!polybar/launch.sh
+
+# alacritty
+!alacritty/
+!alacritty/alacritty.yml
+
+# rofi
+!rofi/
+!rofi/config.rasi
