@@ -6,7 +6,7 @@
 - Playerctl - media player
 - Rofi - window switcher
 - Feh - wallpaper
-- xInput - utility for x input devices
+- xorg - utility for x input devices
 - Vim - editor (optional)
 
 ## Configuration
