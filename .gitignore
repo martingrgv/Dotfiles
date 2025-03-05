@@ -18,3 +18,7 @@
 # rofi
 !rofi/
 !rofi/config.rasi
+
+# wallpapers
+!wallpapers/
+!wallpapers/**

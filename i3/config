@@ -200,7 +200,7 @@ bindsym XF86AudioPrev exec playerctl previous
 exec_always "setxkbmap -model pc104 -layout us,bg -variant ,, -option grp:alt_shift_toggle"
 
 # wallpaper
-exec_always feh --bg-scale ~/.wallpapers/samurai.jpg
+exec_always feh --bg-scale ~/.config/wallpapers/samurai.jpg
 
 # polybar
 exec_always ~/.config/polybar/launch.sh
