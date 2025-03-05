@@ -11,7 +11,7 @@
 
 ## Configuration
 - Default terminal is preconfigured as `alacritty`
-- Wallpaper is preconfigured as `~/.wallpapers/samurai.jpg`
+- Wallpaper is preconfigured as `~/.config/wallpapers/samurai.jpg`
 - Monitors are preconfigured as `e-DP1` (laptop monitor) and `HDMI-1` (external)
 
 ---
