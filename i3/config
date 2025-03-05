@@ -205,8 +205,8 @@ exec_always feh --bg-scale ~/.config/wallpapers/samurai.jpg
 # polybar
 exec_always ~/.config/polybar/launch.sh
 
-# transperancy
-exec --no-startup-id picom --experimental-backends  
+# picom
+exec --no-startup-id picom 
 
 # XInput Devices
 

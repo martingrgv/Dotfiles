@@ -19,6 +19,10 @@
 !rofi/
 !rofi/config.rasi
 
+# picom
+!picom/
+!picom/picom.conf
+
 # wallpapers
 !wallpapers/
 !wallpapers/**
