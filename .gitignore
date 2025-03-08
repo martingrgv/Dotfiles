@@ -23,6 +23,10 @@
 !picom/
 !picom/picom.conf
 
+# neovim
+!nvim/
+!nvim/init.lua
+
 # wallpapers
 !wallpapers/
 !wallpapers/**
