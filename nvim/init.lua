@@ -527,7 +527,7 @@ require("lazy").setup({
 					["<C-Space>"] = cmp.mapping.complete({}),
 
 					-- <c-l> will move you to the right of each of the expansion locations.
-					-- <c-h> is similar, except moving you backwards.
+					--<c-h> is similar, except moving you backwards.
 					["<C-l>"] = cmp.mapping(function()
 						if luasnip.expand_or_locally_jumpable() then
 							luasnip.expand_or_jump()
@@ -661,7 +661,7 @@ require("lazy").setup({
 
 	-- NOTE: Additional plugins
 
-	{
+	{ -- Neo Tree
 		"nvim-neo-tree/neo-tree.nvim",
 		branch = "v3.x",
 		dependencies = {
@@ -670,8 +670,19 @@ require("lazy").setup({
 			"MunifTanjim/nui.nvim",
 			-- {"3rd/image.nvim", opts = {}}, -- Optional image support in preview window: See `# Preview Mode` for more information
 		},
+		config = function()
+			local neotree = require("neo-tree")
+			neotree.setup({
+				close_if_last_window = true,
+				filesystem = {
+					follow_current_file = true,
+				},
+			})
+
+			vim.api.nvim_set_keymap("n", "<leader><CR>", ":Neotree toggle<CR>", { noremap = true, silent = true })
+		end,
 	},
-	{
+	{ -- C# Debugger
 		"mfussenegger/nvim-dap",
 		dependencies = {
 			"rcarriga/nvim-dap-ui",
@@ -692,14 +703,20 @@ require("lazy").setup({
 				args = { "--interpreter=vscode" },
 			}
 
+			local env = {
+				ASPNETCORE_ENVIRONMENT = "Development",
+			}
+
 			dap.configurations.cs = {
 				{
 					type = "coreclr",
 					name = "Launch .NET",
 					request = "launch",
 					program = function()
-						return vim.fn.input("Path to DLL: ", vim.fn.getcwd() .. "/bin/Debug/net7.0/", "file")
+						return vim.fn.input("Path to DLL: ", vim.fn.getcwd() .. "/bin/Debug/net8.0/", "file")
 					end,
+					cwd = vim.fn.getcwd(),
+					environment = env,
 				},
 			}
 
@@ -738,12 +755,6 @@ require("lazy").setup({
 			end
 		end,
 	},
-
-	-- require("kickstart.plugins.debug"),
-	-- require("kickstart.plugins.indent_line"),
-	-- require 'kickstart.plugins.lint',
-	-- require 'kickstart.plugins.autopairs',
-	-- require 'kickstart.plugins.gitsigns', -- adds gitsigns recommend keymaps
 }, {
 	ui = {
 		icons = vim.g.have_nerd_font and {} or {
