@@ -7,7 +7,10 @@
 - Rofi - window switcher
 - Feh - wallpaper
 - xorg - utility for x input devices
-- Vim - editor (optional)
+- Neovim - editor, IDE
+- omnisharp - LSP for Neovim
+- netcoredbg - C# Debugger for Neovim
+- Hack Nerd Font - nerd font
 
 ## Configuration
 - Default terminal is preconfigured as `alacritty`
