@@ -1,5 +1,6 @@
 # i3wm-config
 ## Packages & Tools
+- i3 - I3 window manager
 - alacritty - terminal
 - pactl - adjust volume with PulseAudio
 - brightnessctl - brightness adjustment
