@@ -5,6 +5,7 @@
 - Brightnessctl - brightness adjustment
 - Playerctl - media player
 - Rofi - window switcher
+- Picom - Xorg compositor
 - Feh - wallpaper
 - xorg - utility for x input devices
 - Neovim - editor, IDE
