@@ -441,7 +441,16 @@ require("lazy").setup({
 			})
 		end,
 	},
-
+	{ -- C# Roslyn
+		"seblyng/roslyn.nvim",
+		dependencies = { "neovim/nvim-lspconfig" }, -- Ensure LSP base is loaded first
+		config = function()
+			require("roslyn").setup({
+				-- Optional: Add custom configurations here
+				-- (see roslyn.nvim docs for options)
+			})
+		end,
+	},
 	{ -- Autoformat
 		"stevearc/conform.nvim",
 		event = { "BufWritePre" },
@@ -710,7 +719,7 @@ require("lazy").setup({
 			dap.configurations.cs = {
 				{
 					type = "coreclr",
-					name = "Launch .NET",
+					name = "launch - netcoredbg",
 					request = "launch",
 					program = function()
 						return vim.fn.input("Path to DLL: ", vim.fn.getcwd() .. "/bin/Debug/net8.0/", "file")
