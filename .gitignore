@@ -13,7 +13,7 @@
 
 # alacritty
 !alacritty/
-!alacritty/alacritty.yml
+!alacritty/alacritty.toml
 
 # rofi
 !rofi/
