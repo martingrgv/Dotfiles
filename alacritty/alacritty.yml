@@ -1,7 +1,0 @@
-window:
-  opacity: 0.65
-  font:
-    normal:
-      family: "Hack Nerd Font"
-      style: Regular
-    size: 12
