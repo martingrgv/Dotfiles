@@ -200,7 +200,8 @@ bindsym XF86AudioPrev exec playerctl previous
 exec_always "setxkbmap -model pc104 -layout us,bg -variant ,, -option grp:alt_shift_toggle"
 
 # wallpaper
-exec_always feh --bg-scale ~/.config/wallpapers/samurai.jpg
+exec --no-startup-id nitrogen --restore & 
+#exec_always feh --bg-scale ~/.config/wallpapers/samurai.jpg
 
 # polybar
 exec_always ~/.config/polybar/launch.sh
@@ -216,7 +217,5 @@ exec_always --no-startup-id xinput set-prop "ELAN0504:00 04F3:303F Touchpad" "li
 
 ## Logitech MX Master 3S
 exec_always --no-startup-id xinput set-prop "Logitech MX Master 3S" "libinput Natural Scrolling Enabled" 1
-exec_always --no-startup-id xinput set-prop "Logitech MX Master 3S" "libinput Accel Speed" -0.8
-
-## Razer DeathAdder Essential
-exec_always --no-startup-id xinput --set-prop "pointer:Razer Razer DeathAdder Essential" "libinput Accel Speed" -1
+exec_always --no-startup-id xinput set-prop "Logitech MX Master 3S" "Device Accel Profile" 0
+exec_always --no-startup-id xinput set-prop "Logitech MX Master 3S" "libinput Accel Speed" 0.2

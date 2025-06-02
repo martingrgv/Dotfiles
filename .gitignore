@@ -2,9 +2,13 @@
 *
 !.gitignore
 
-# i3wm
-!i3/
-!i3/config
+# bspwm
+!bspwm/
+!bspwm/bspwmrc
+
+# sxhkd
+!sxhkd/
+!sxhkd/sxhkdrc
 
 # polybar
 !polybar
