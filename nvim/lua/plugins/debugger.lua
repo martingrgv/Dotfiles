@@ -23,14 +23,32 @@ return { -- C# Debugger
 
 		dap.configurations.cs = {
 			{
+				name = "Run .NET Core",
 				type = "coreclr",
-				name = "launch - netcoredbg",
 				request = "launch",
-				program = function()
-					return vim.fn.input("Path to DLL: ", vim.fn.getcwd() .. "/bin/Debug/net8.0/", "file")
-				end,
 				cwd = vim.fn.getcwd(),
 				environment = env,
+				program = function()
+					local dlls = vim.fn.glob(vim.fn.getcwd() .. "/bin/Debug/net*/**/*.dll", false, true)
+					if #dlls == 0 then
+						vim.notify("❌ No DLL found. Did you forget to build?", vim.log.levels.ERROR)
+						return vim.fn.input("Path to DLL: ", vim.fn.getcwd() .. "/bin/Debug/net8.0/", "file")
+					end
+					return dlls[1] -- Pick the first one
+				end,
+				before = function(config)
+					print("Building...")
+
+					local result = vim.fn.system("dotnet build")
+					if vim.v.shell_error ~= 0 then
+						vim.notify("Build failed:\n" .. result, vim.log.levels.ERROR)
+						print("Build failed")
+						return false
+					end
+
+					print("Build succeeded")
+					return true
+				end,
 			},
 		}
 
