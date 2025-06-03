@@ -30,7 +30,8 @@
 # neovim
 !nvim/
 !nvim/init.lua
-!nvim/lua/*
+!nvim/lua/
+!nvim/lua/**
 
 # wallpapers
 !wallpapers/
