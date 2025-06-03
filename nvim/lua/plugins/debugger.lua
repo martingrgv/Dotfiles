@@ -1,5 +1,6 @@
 return { -- C# Debugger
 	"mfussenegger/nvim-dap",
+	lazy = false,
 	dependencies = {
 		"rcarriga/nvim-dap-ui",
 		"nvim-neotest/nvim-nio",
