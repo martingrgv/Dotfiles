@@ -1,4 +1,4 @@
-# i3wm-config
+# Dotfiles
 ## Packages & Tools
 - bspwm - bspwm (window manager)
 - alacritty - terminal
