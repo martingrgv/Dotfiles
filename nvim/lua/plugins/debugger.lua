@@ -29,12 +29,30 @@ return { -- C# Debugger
 				cwd = vim.fn.getcwd(),
 				environment = env,
 				program = function()
-					local dlls = vim.fn.glob(vim.fn.getcwd() .. "/bin/Debug/net*/**/*.dll", false, true)
-					if #dlls == 0 then
-						vim.notify("❌ No DLL found. Did you forget to build?", vim.log.levels.ERROR)
-						return vim.fn.input("Path to DLL: ", vim.fn.getcwd() .. "/bin/Debug/net8.0/", "file")
+					vim.notify("Started debugging...", vim.log.levels.DEBUG)
+
+					local cwd = vim.fn.getcwd()
+					local projectName = vim.fn.fnamemodify(cwd, ":t")
+					local dllPattern = cwd .. "/bin/Debug/net*/" .. projectName .. ".dll"
+					local projectDlls = vim.fn.glob(dllPattern, false, true)
+
+					vim.notify("cwd: " .. cwd, vim.log.levels.DEBUG)
+					vim.notify("project name: " .. projectName, vim.log.levels.DEBUG)
+
+					if #projectDlls == 0 then
+						vim.notify("❌ Project DLL not found! Did you forget to build?", vim.log.levels.ERROR)
+						return vim.fn.input("Path to DLL: ", cwd .. "/", "file")
 					end
-					return dlls[1] -- Pick the first one
+
+					local dllPath = projectDlls[1]
+					vim.notify("dll path: " .. dllPath, vim.log.levels.DEBUG)
+
+					if vim.fn.filereadable(dllPath) == 1 then
+						return dllPath
+					end
+
+					vim.notify("❌ DLL not readable!", vim.log.levels.ERROR)
+					return vim.fn.input("Path to DLL: ", cwd .. "/", "file")
 				end,
 				before = function(config)
 					print("Building...")
@@ -55,6 +73,9 @@ return { -- C# Debugger
 		vim.keymap.set("n", "<F5>", function()
 			dap.continue()
 		end, { desc = "Start Debugging" })
+		vim.keymap.set("n", "<F6>", function()
+			dap.terminate()
+		end, { desc = "Stop Debugging" })
 		vim.keymap.set("n", "<F10>", function()
 			dap.step_over()
 		end, { desc = "Step Over" })
@@ -78,11 +99,11 @@ return { -- C# Debugger
 		dap.listeners.after.event_initialized["dapui_config"] = function()
 			dapui.open()
 		end
-		dap.listeners.before.event_terminated["dapui_config"] = function()
-			dapui.close()
-		end
-		dap.listeners.before.event_exited["dapui_config"] = function()
-			dapui.close()
-		end
+		-- dap.listeners.before.event_terminated["dapui_config"] = function()
+		-- 	dapui.close()
+		-- end
+		-- dap.listeners.before.event_exited["dapui_config"] = function()
+		-- 	dapui.close()
+		-- end
 	end,
 }
