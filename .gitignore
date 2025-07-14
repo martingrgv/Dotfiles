@@ -2,15 +2,15 @@
 *
 !.gitignore
 
-# bspwm
+# hyprland
 !hypr/
 !hypr/hyprland.conf
 !hypr/hyprpaper.conf
 
-# polybar
-!polybar
-!polybar/config.ini
-!polybar/launch.sh
+
+# waybar
+!waybar/
+!waybar/**
 
 # alacritty
 !alacritty/
