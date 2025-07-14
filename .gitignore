@@ -3,12 +3,9 @@
 !.gitignore
 
 # bspwm
-!bspwm/
-!bspwm/bspwmrc
-
-# sxhkd
-!sxhkd/
-!sxhkd/sxhkdrc
+!hypr/
+!hypr/hyprland.conf
+!hypr/hyprpaper.conf
 
 # polybar
 !polybar
