@@ -13,7 +13,7 @@ return {
 		local capabilities = vim.lsp.protocol.make_client_capabilities()
 		capabilities = vim.tbl_deep_extend("force", capabilities, require("cmp_nvim_lsp").default_capabilities())
 
-		vim.lsp.confg("roslyn", {
+		vim.lsp.config("roslyn", {
 			cmd = cmd,
 			handlers = require("rzls.roslyn_handlers"),
 			settings = {
