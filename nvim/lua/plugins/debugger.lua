@@ -17,17 +17,15 @@ return { -- C# Debugger
 			args = { "--interpreter=vscode" },
 		}
 
-		local env = {
-			ASPNETCORE_ENVIRONMENT = "Development",
-		}
-
 		dap.configurations.cs = {
 			{
 				name = "Run .NET Core",
 				type = "coreclr",
 				request = "launch",
 				cwd = vim.fn.getcwd(),
-				environment = env,
+				env = {
+					ASPNETCORE_ENVIRONMENT = "Development",
+				},
 				program = function()
 					vim.notify("Started debugging...", vim.log.levels.DEBUG)
 
@@ -94,16 +92,19 @@ return { -- C# Debugger
 		vim.keymap.set("n", "<Leader>du", function()
 			dapui.toggle()
 		end, { desc = "Toggle DAP UI" })
+		vim.keymap.set("n", "<Leader>dj", function()
+			dap.goto_(vim.fn.getcurpos()[2])
+		end, { desc = "Debugger - Set next statement" })
 
 		-- Auto open/close dap-ui when debugging starts/stops
 		dap.listeners.after.event_initialized["dapui_config"] = function()
 			dapui.open()
 		end
-		-- dap.listeners.before.event_terminated["dapui_config"] = function()
-		-- 	dapui.close()
-		-- end
-		-- dap.listeners.before.event_exited["dapui_config"] = function()
-		-- 	dapui.close()
-		-- end
+		dap.listeners.before.event_terminated["dapui_config"] = function()
+			dapui.close()
+		end
+		dap.listeners.before.event_exited["dapui_config"] = function()
+			dapui.close()
+		end
 	end,
 }
