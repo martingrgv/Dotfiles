@@ -1,7 +1,7 @@
-# Ignore everything and include .gitignore
 *
 !.gitignore
 !.config/
+!README.md
 
 # hyprland
 !.config/hypr/

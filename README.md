@@ -1,0 +1,23 @@
+# Dotfiles
+## Packages & Tools
+- bspwm - bspwm (window manager)
+- alacritty - terminal
+- pactl - adjust volume with PulseAudio
+- brightnessctl - brightness adjustment
+- playerctl - media player
+- rofi - window switcher
+- picom - Xorg compositor
+- nitrogen - wallpaper
+- xorg - utility for x input devices
+- neovim - editor, IDE
+- dotnet-sdk-8.0 - .NET 8
+- aspnet-runtime-8.0 - ASP.NET Runtime
+- dontet-runtime-8.0 - Runtime for .NET 8 console apps (Only if no SDK is installed and running .NET native applications)
+- omnisharp - LSP for Neovim
+- netcoredbg - C# Debugger for Neovim
+- Hack Nerd Font - Nerd font
+- xclip - clipboard
+- unzip - archive extracting
+- make - util
+- gcc - C compiler
+- git - git version control
