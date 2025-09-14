@@ -1,35 +1,32 @@
 # Ignore everything and include .gitignore
 *
 !.gitignore
+!.config/
 
 # hyprland
-!hypr/
-!hypr/hyprland.conf
-!hypr/hyprpaper.conf
-
+!.config/hypr/
+!.config/hypr/**
 
 # waybar
-!waybar/
-!waybar/**
+!.config/waybar/
+!.config/waybar/**
 
 # alacritty
-!alacritty/
-!alacritty/alacritty.toml
+!.config/alacritty/
+!.config/alacritty/**
 
 # rofi
-!rofi/
-!rofi/config.rasi
+!.config/rofi/
+!.config/rofi/**
 
 # picom
-!picom/
-!picom/picom.conf
+!.config/picom/
+!.config/picom/**
 
 # neovim
-!nvim/
-!nvim/init.lua
-!nvim/lua/
-!nvim/lua/**
+!.config/nvim/
+!.config/nvim/**
 
 # wallpapers
-!wallpapers/
-!wallpapers/**
+!.wallpapers/
+!.wallpapers/**
