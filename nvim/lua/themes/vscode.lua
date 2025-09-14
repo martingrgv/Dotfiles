@@ -1,6 +1,6 @@
 return {
 	"Mofiqul/vscode.nvim",
-	--name = "vscode",
+	name = "vscode",
 	lazy = false,
 	priority = 1001,
 	config = function()

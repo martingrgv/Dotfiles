@@ -3,13 +3,11 @@ vim.g.maplocalleader = " "
 
 -- NOTE: Options
 
+vim.opt.clipboard = "unnamedplus"
 vim.g.have_nerd_font = true
 vim.opt.number = true
 vim.opt.mouse = "a"
 vim.opt.showmode = false
-vim.schedule(function()
-	vim.opt.clipboard = "unnamedplus"
-end)
 vim.opt.breakindent = true
 vim.opt.undofile = true
 vim.opt.ignorecase = true
