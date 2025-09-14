@@ -13,6 +13,7 @@ return {
 			close_if_last_window = true,
 			filesystem = {
 				follow_current_file = true,
+				bind_to_cwd = true,
 			},
 		})
 
