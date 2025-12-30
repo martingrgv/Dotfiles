@@ -5,7 +5,8 @@ vim.g.maplocalleader = " "
 
 vim.opt.clipboard = "unnamedplus"
 vim.g.have_nerd_font = true
-vim.opt.number = true
+vim.opt.number = false
+vim.opt.relativenumber = true
 vim.opt.mouse = "a"
 vim.opt.showmode = false
 vim.opt.breakindent = true
