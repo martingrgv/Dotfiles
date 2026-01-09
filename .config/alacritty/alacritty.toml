@@ -1,6 +1,6 @@
 [window]
-opacity = 0.65
+opacity = 0.2
 
 [font]
 normal = { family = "Hack Nerd Font", style = "Regular" }
-size = 12
+size = 13
