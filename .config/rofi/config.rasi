@@ -1,6 +1,19 @@
+@import "catppuccin-mocha"
 
-//@theme "/home/martinwlsngrgv/.local/share/rofi/themes/squared-material-red.rasi"
+configuration {
+    modi: "run,drun,window";
+    icon-theme: "Oranchelo";
+    show-icons: true;
+    terminal: "kitty";
+    drun-display-format: "{icon} {name}";
+    location: 0;
+    disable-history: false;
+    hide-scrollbar: true;
+    display-drun: "   Apps ";
+    display-run: "   Run ";
+    display-window: " 󰕰  Window";
+    sidebar-mode: true;
+}
 
-//@theme "/usr/share/rofi/themes/purple.rasi"
-
-@theme "/home/martinwlsngrgv/.local/share/rofi/themes/spotlight-dark.rasi"
+//@theme "solarized" // You can change this to any theme in /usr/share/rofi/themes
+@theme "catppuccin-mocha"
